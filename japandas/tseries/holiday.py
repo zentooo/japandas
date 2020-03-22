@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 import datetime
 import os
 
-import pandas.compat as compat
+import pandas as pd
 import pandas.tseries.holiday as holiday
 
 current_dir = os.path.dirname(__file__)
@@ -16,8 +16,7 @@ tse_data_path = os.path.join(current_dir, 'data', 'tseholidays.pkl')
 
 def _read_rules(path):
     if os.path.exists(path):
-        with open(path, mode='rb') as f:
-            rules = compat.cPickle.load(f)
+        rules - pd.read_pickle(path)
     elif __name__ != '__main__':
         raise ImportError("Unable to load '{0}'".format(path))
     else:
