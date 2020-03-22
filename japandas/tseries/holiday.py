@@ -16,7 +16,7 @@ tse_data_path = os.path.join(current_dir, 'data', 'tseholidays.pkl')
 
 def _read_rules(path):
     if os.path.exists(path):
-        rules - pd.read_pickle(path)
+        rules = pd.read_pickle(path)
     elif __name__ != '__main__':
         raise ImportError("Unable to load '{0}'".format(path))
     else:
